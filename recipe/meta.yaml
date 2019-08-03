@@ -1,6 +1,6 @@
 {% set name = "mwclient" %}
-{% set version = "0.9.3" %}
-{% set sha256 = "105123ec13a9519453612edf6f2d055b6b0f15ea6c457ea2c0c53af1951e3fd3" %}
+{% set version = "0.10.0" %}
+{% set sha256 = "c3f1598a5f75fb80e9b8373f6574042208358aed81470fc2178a8ae7474069af" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
   
 build:
-  number: 1000
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
