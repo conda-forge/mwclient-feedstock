@@ -1,5 +1,5 @@
 {% set name = "mwclient" %}
-{% set version = "0.9.3" %}
+{% set version = "0.10.0" %}
 {% set sha256 = "105123ec13a9519453612edf6f2d055b6b0f15ea6c457ea2c0c53af1951e3fd3" %}
 
 package:
