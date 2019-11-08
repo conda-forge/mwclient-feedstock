@@ -1,25 +1,21 @@
-{% set name = "mwclient" %}
 {% set version = "0.10.0" %}
-{% set sha256 = "105123ec13a9519453612edf6f2d055b6b0f15ea6c457ea2c0c53af1951e3fd3" %}
 
 package:
-  name: {{ name }}
+  name: mwclient
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/m/mwclient/mwclient-{{ version }}.tar.gz
+  sha256: c3f1598a5f75fb80e9b8373f6574042208358aed81470fc2178a8ae7474069af
   
 build:
-  number: 1000
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1001
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - requests-oauthlib
