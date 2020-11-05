@@ -1,39 +1,45 @@
-{% set version = "0.10.0" %}
+{% set name = "mwclient" %}
+{% set version = "0.10.1" %}
+
 
 package:
-  name: mwclient
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/m/mwclient/mwclient-{{ version }}.tar.gz
-  sha256: c3f1598a5f75fb80e9b8373f6574042208358aed81470fc2178a8ae7474069af
-  
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mwclient-{{ version }}.tar.gz
+  sha256: 79363dd8d12f5e3b91b92b63152bf9dfef27da786c076a244e1f148c8dd67139
+
 build:
-  number: 1002
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python
+  host:
     - pip
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - requests-oauthlib
     - six
 
 test:
   imports:
     - mwclient
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/mwclient/mwclient
+  summary: MediaWiki API client
   license: MIT
-  summary: 'MediaWiki API client'
   license_family: MIT
   license_file: LICENSE.md
-  doc_url: http://mwclient.readthedocs.io/en/latest/user/index.html
-  dev_url: https://github.com/mwclient/mwclient
+  doc_url: https://mwclient.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
-    - JohnGreeley
+    - anthchirp
