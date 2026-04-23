@@ -1,5 +1,5 @@
 {% set name = "mwclient" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mwclient-{{ version }}.tar.gz
-  sha256: 79363dd8d12f5e3b91b92b63152bf9dfef27da786c076a244e1f148c8dd67139
+  sha256: 2bb7696f3703243eb33514ab162d7f6076dcedd011be90682936046c5e34fd06
 
 build:
   number: 0
